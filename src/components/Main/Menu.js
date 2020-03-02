@@ -29,7 +29,7 @@ class Menu extends Component {
         );
         const loginJSX = (
             <View style={loginContainer}>
-                <Text style={username}>Nguyen Van Pho</Text>
+                <Text style={username}>Duong Quoc Khanh</Text>
                 <View>
                     <TouchableOpacity style={btnSignInStyle} onPress={this.gotoOrderHistory.bind(this)}>
                         <Text style={btnTextSignIn}>Order History</Text>

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Drawer from 'react-native-drawer';
 import Menu from './Menu';
 import Shop from './Shop/Shop';
+import {connect} from 'react-redux';
+
 class Main extends Component {
     closeControlPanel = () => {
         this.drawer.close();
@@ -20,5 +22,13 @@ class Main extends Component {
             </Drawer>
         );
     }
+    componentDidMount(){
+        console.log("DEVK",this.props.solonNhat)
+    }
 }
-export default Main;
+const ConectDataState = (state) =>{
+    return{
+        solonNhat: state.solonNhat
+    }
+}
+export default connect(ConectDataState) (Main)

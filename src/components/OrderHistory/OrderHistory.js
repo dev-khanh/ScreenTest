@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, TouchableOpacity, Text, Image, StyleSheet, Dimensions, ScrollView } from 'react-native';
 import backSpecial from '../../media/appIcon/backs.png';
+import {connect} from 'react-redux';
 class OrderHistory extends Component {
     constructor(props) {
         super(props);
@@ -9,6 +10,10 @@ class OrderHistory extends Component {
     goBackToMain() {
         const { navigation } = this.props;
         navigation.pop();
+        this.props.dispatch({
+            type:'UPDATE',
+            solonNhat:this.props.solonNhat + 1
+        })
     }
     render() {
         const { wrapper, header, headerTitle, backIconStyle, body, orderRow } = styles;
@@ -138,4 +143,9 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around'
     }
 });
-export default OrderHistory;
+const ConectDataState = (state) =>{
+    return{
+        solonNhat: state.solonNhat
+    }
+}
+export default connect(ConectDataState) (OrderHistory)

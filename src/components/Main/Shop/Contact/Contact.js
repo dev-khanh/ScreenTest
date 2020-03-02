@@ -16,19 +16,19 @@ class Contact extends Component {
                 <View style={infoContainer}>
                     <View style={rowInfoContainer}>
                         <Image source={locationIcon} style={imageStyle} />
-                        <Text style={infoText}>90 Le Thi Rieng/ Ben Thanh Dist</Text>
+                        <Text style={infoText}>176 Nguyen Thi Thap / Quan 7 / HCM</Text>
                     </View>
                     <View style={rowInfoContainer}>
                         <Image source={phoneIcon} style={imageStyle} />
-                        <Text style={infoText}>(+84) 01694472176</Text>
+                        <Text style={infoText}>(+84) 0344341900</Text>
                     </View>
                     <View style={rowInfoContainer}>
                         <Image source={mailIcon} style={imageStyle} />
-                        <Text style={infoText}>khoaphamtraining@gmail.com</Text>
+                        <Text style={infoText}>devdqkhanh@gmail.com</Text>
                     </View>
                     <View style={[rowInfoContainer, { borderBottomWidth: 0 }]}>
                         <Image source={messageIcon} style={imageStyle} />
-                        <Text style={infoText}>(+84) 09877067707</Text>
+                        <Text style={infoText}>(+84) 0344341900</Text>
                     </View>
                 </View>
             </View>
