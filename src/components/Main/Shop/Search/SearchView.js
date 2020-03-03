@@ -11,7 +11,7 @@ class SearchView extends Component {
         navigation.navigate({ name: 'PRODUCT_DETAIL' });
     }
     render() {
-        const { product, mainRight, txtMaterial, txtColor, txtName, txtPrice, productImage, txtShowDetail, showDetailContainer, wrapper } = styles;
+        const { product, mainRight, txtMaterial, txtColor, txtName, txtPrice, productImage, txtShowDetail, showDetailContainer, wrapper, customView } = styles;
         return (
             <ScrollView style={wrapper}>
                 <View style={product}>
@@ -22,15 +22,7 @@ class SearchView extends Component {
                         <Text style={txtMaterial}>Material Fur</Text>
                         <View style={{ flexDirection: 'row' }} >
                             <Text style={txtColor}>Color white</Text>
-                            <View
-                                style={{
-                                    height: 15,
-                                    width: 15,
-                                    backgroundColor: 'white',
-                                    borderRadius: 15,
-                                    marginLeft: 10
-                                }}
-                            />
+                            <View style={customView}/>
                         </View>
                         <TouchableOpacity style={showDetailContainer} onPress={()=>this.gotoDetail()}>
                             <Text style={txtShowDetail}>SHOW DETAILS</Text>
@@ -45,18 +37,7 @@ class SearchView extends Component {
                         <Text style={txtMaterial}>Material Fur</Text>
                         <View style={{ flexDirection: 'row' }} >
                             <Text style={txtColor}>Color white</Text>
-                            <View style={{ flexDirection: 'row' }} >
-                                <Text style={txtColor}>Color white</Text>
-                                <View
-                                    style={{
-                                        height: 15,
-                                        width: 15,
-                                        backgroundColor: 'white',
-                                        borderRadius: 15,
-                                        marginLeft: 10
-                                    }}
-                                />
-                            </View>
+                            <View style={customView}/>
                         </View>
                         <TouchableOpacity style={showDetailContainer}>
                             <Text style={txtShowDetail}>SHOW DETAILS</Text>
@@ -74,6 +55,13 @@ const styles = StyleSheet.create({
     wrapper: {
         backgroundColor: '#F6F6F6',
         flex: 1
+    },
+    customView:{
+        height: 15,
+        width: 15,
+        backgroundColor: 'white',
+        borderRadius: 15,
+        marginLeft: 10
     },
     product: {
         flexDirection: 'row',

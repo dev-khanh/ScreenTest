@@ -1,22 +1,30 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import profileIcon from '../../media/temp/profile.png';
+import {connect} from 'react-redux'
 class Menu extends Component {
     constructor(props) {
         super(props);
         this.state = { isLogedIn: true };
     }
     gotoAuthentication() {
-        const { navigation } = this.props;
+        const { navigation, closeControlPanel } = this.props;
         navigation.navigate({ name: 'AUTHENTICATION' });
+        closeControlPanel();
+        this.props.dispatch({
+            type:'UPDATE',
+            goBack:'khanh'
+        })
     }
     gotoChangeInfo() {
-        const { navigation } = this.props;
+        const { navigation, closeControlPanel } = this.props;
         navigation.navigate({ name: 'CHANGE_INFO' });
+        closeControlPanel();
     }
     gotoOrderHistory() {
-        const { navigation } = this.props;
+        const { navigation, closeControlPanel } = this.props;
         navigation.navigate({ name: 'ORDER_HISTORY' });
+        closeControlPanel();
     }
     render() {
         const { container, profile, btnStyle, btnText, btnSignInStyle, btnTextSignIn, loginContainer, username } = styles;
@@ -104,4 +112,9 @@ const styles = StyleSheet.create({
         fontSize: 20
     }
 });
-export default Menu;
+const ConnectMenu = (state) =>{
+    return{
+        goBack: state.goBack
+    }
+}
+export default connect(ConnectMenu) (Menu);

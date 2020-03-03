@@ -5,7 +5,6 @@ import maxiIcon from '../../../../media/temp/maxi.jpg';
 import partyIcon from '../../../../media/temp/party.jpg';
 const { width, height } = Dimensions.get('window');
 import ViewPager from '@react-native-community/viewpager';
- 
 class Category extends Component {
     gotoListProduct() {
         const { navigation } = this.props;
@@ -34,7 +33,6 @@ class Category extends Component {
                             <ImageBackground source={partyIcon} style={imageStyle}>
                                 <Text style={cateTitle}>Maxi Dress</Text>
                             </ImageBackground>
-                            
                         </TouchableOpacity>
                     </ViewPager>
                 </View>

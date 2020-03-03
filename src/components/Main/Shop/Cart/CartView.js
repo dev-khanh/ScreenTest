@@ -10,7 +10,7 @@ class CartView extends Component {
         navigation.navigate({ name: 'PRODUCT_DETAIL' });
     }
     render() {
-        const { main, checkoutButton, checkoutTitle, wrapper, product, mainRight, productController, txtName, txtPrice, productImage, numberOfProduct, txtShowDetail, showDetailContainer } = styles;
+        const { main, checkoutButton, checkoutTitle, wrapper, product, mainRight, productController, txtName, txtPrice, productImage, numberOfProduct, txtShowDetail, showDetailContainer, color969696 } = styles;
         return (
             <View style={wrapper}>
                 <ScrollView style={main}>
@@ -20,7 +20,7 @@ class CartView extends Component {
                             <View style={{ justifyContent: 'space-between', flexDirection: 'row' }}>
                                 <Text style={txtName}>{toTitleCase('black of the')}</Text>
                                 <TouchableOpacity>
-                                    <Text style={{ fontFamily: 'Avenir', color: '#969696' }}>X</Text>
+                                    <Text style={color969696}>X</Text>
                                 </TouchableOpacity>
                             </View>
                             <View>
@@ -48,7 +48,7 @@ class CartView extends Component {
                             <View style={{ justifyContent: 'space-between', flexDirection: 'row' }}>
                                 <Text style={txtName}>{toTitleCase('black of the')}</Text>
                                 <TouchableOpacity>
-                                    <Text style={{ fontFamily: 'Avenir', color: '#969696' }}>X</Text>
+                                    <Text style={color969696}>X</Text>
                                 </TouchableOpacity>
                             </View>
                             <View>
@@ -76,7 +76,7 @@ class CartView extends Component {
                             <View style={{ justifyContent: 'space-between', flexDirection: 'row' }}>
                                 <Text style={txtName}>{toTitleCase('black of the')}</Text>
                                 <TouchableOpacity>
-                                    <Text style={{ fontFamily: 'Avenir', color: '#969696' }}>X</Text>
+                                    <Text style={color969696}>X</Text>
                                 </TouchableOpacity>
                             </View>
                             <View>
@@ -104,7 +104,7 @@ class CartView extends Component {
                             <View style={{ justifyContent: 'space-between', flexDirection: 'row' }}>
                                 <Text style={txtName}>{toTitleCase('black of the')}</Text>
                                 <TouchableOpacity>
-                                    <Text style={{ fontFamily: 'Avenir', color: '#969696' }}>X</Text>
+                                    <Text style={color969696}>X</Text>
                                 </TouchableOpacity>
                             </View>
                             <View>
@@ -134,11 +134,9 @@ class CartView extends Component {
         );
     }
 }
-
 const { width } = Dimensions.get('window');
 const imageWidth = width / 4;
 const imageHeight = (imageWidth * 452) / 361;
-
 const styles = StyleSheet.create({
     wrapper: {
         flex: 1,
@@ -215,7 +213,9 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'flex-end'
+    },
+    color969696:{
+        fontFamily: 'Avenir', color: '#969696' 
     }
 });
-
 export default CartView;

@@ -8,19 +8,17 @@ import Authentication from './Authentication/Authentication';
 import OrderHistory from './OrderHistory/OrderHistory';
 import ProductDetail from './Main/Shop/ProductDetail/ProductDetail';
 import ListProduct from './Main/Shop/ListProduct/ListProduct';
-
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-
 var ArrayList = {
-  solonNhat: 0
+  goBack: ''
 }
 const renderData  = (state = ArrayList, action) =>{
     switch(action.type){
       case "UPDATE":
         return{
           ...state,
-          solonNhat: action.solonNhat
+          goBack: action.goBack
         }
         break;
       default:
@@ -31,7 +29,6 @@ const renderData  = (state = ArrayList, action) =>{
 const Stack = createStackNavigator();
 StatusBar.setHidden(true);
 function MainApp(name) {
-  console.log('devk',name)
   return(
     <NavigationContainer>
       <Stack.Navigator initialRouteName={name.initRouteName}>

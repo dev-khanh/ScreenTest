@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import icBack from '../../media/appIcon/back_white.png';
 import icLogo from '../../media/appIcon/ic_logo.png';
+import {connect} from 'react-redux';
 class Authentication extends Component {
     constructor(props) {
         super(props);
@@ -15,7 +16,7 @@ class Authentication extends Component {
     }
     goBackToMain() {
         const { navigation } = this.props;
-        navigation.pop();
+        navigation.pop()
     }
     render() {
         const { row1, iconStyle, titleStyle, container, controlStyle, signInStyle, signUpStyle, activeStyle, inactiveStyle, inputStyle, bigButton, buttonText } = styles;
@@ -122,4 +123,9 @@ const styles = StyleSheet.create({
         fontWeight: '400'
     }
 });
-export default Authentication;
+const ConnectAuthen = (state) =>{
+    return{
+        goBack: state.goBack
+    }
+}
+export default connect(ConnectAuthen) (Authentication);

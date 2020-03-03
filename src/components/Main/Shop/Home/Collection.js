@@ -4,10 +4,10 @@ import bannerImage from '../../../../media/temp/banner.jpg';
 const { width } = Dimensions.get('window');
 class Collection extends Component {
     render() {
-        const { wrapper, textStyle, imageStyle } = styles;
+        const { wrapper, textStyle, imageStyle, viewContentView } = styles;
         return (
             <View style={wrapper}>
-                <View style={{ height: 50, justifyContent: 'center' }}>
+                <View style={viewContentView}>
                     <Text style={textStyle} >SPRING COLLECTION</Text>
                 </View>
                 <TouchableOpacity style={{ flex: 4, justifyContent: 'flex-end' }}>
@@ -20,7 +20,6 @@ class Collection extends Component {
 //933 x 465
 const imageWidth = width - 40;
 const imageHeight = (imageWidth / 933) * 465;
-
 const styles = StyleSheet.create({
     wrapper: {
         width: width - 20,
@@ -39,6 +38,9 @@ const styles = StyleSheet.create({
     imageStyle: {
         height: imageHeight, 
         width: imageWidth
+    },
+    viewContentView:{
+        height: 50, justifyContent: 'center'
     }
 });
 export default Collection;
