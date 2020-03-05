@@ -46,6 +46,8 @@ target 'ScreenTest' do
 
   pod 'react-native-viewpager', :path => '../node_modules/@react-native-community/viewpager'
 
+  pod 'react-native-maps', :path => '../node_modules/react-native-maps'
+
   target 'ScreenTestTests' do
     inherit! :search_paths
     # Pods for testing
